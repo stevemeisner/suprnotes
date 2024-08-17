@@ -1,0 +1,12 @@
+@import '@styles/structure.scss';
+@import '@styles/utils.scss';
+
+.primary {
+  display: grid;
+  grid-template-columns: rem(250) 1fr;
+  @include outer-container;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--primary-color);
+  margin-bottom: 3rem;
+}

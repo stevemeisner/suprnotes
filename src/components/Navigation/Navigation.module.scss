@@ -1,0 +1,16 @@
+@import '@styles/structure.scss';
+@import '@styles/utils.scss';
+
+.primary {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: end;
+  align-content: center;
+
+  ul {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1rem;
+    list-style: none;
+  }
+}

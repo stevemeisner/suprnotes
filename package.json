@@ -2,6 +2,10 @@
   "name": "supanotes",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "^20.16.0",
+    "pnpm": "^9.7.1"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,16 +13,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "eslint-plugin-import": "^2.29.1",
+    "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.5"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.5"
+    "eslint-config-next": "14.2.5",
+    "sass": "^1.77.8",
+    "typescript": "^5"
   }
 }

@@ -1,0 +1,17 @@
+@import '@styles/structure.scss';
+@import '@styles/utils.scss';
+
+.linkButton {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--dark-grey-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 0.25rem;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--dark-grey-color);
+    box-shadow: inset 2px -4px 7px 0.16rem var(--secondary-color);
+  }
+}

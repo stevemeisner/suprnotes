@@ -1,0 +1,33 @@
+@import '@styles/structure.scss';
+@import '@styles/utils.scss';
+@import '@styles/variables.module.scss';
+
+.main {
+  @include outer-container;
+
+  p + p {
+    margin-top: 1.5rem;
+  }
+
+  h1 + p {
+    margin-top: 0.5rem;
+  }
+}
+
+.intro {
+  max-width: 34.5rem;
+  text-align: center;
+  @include autoMargin;
+}
+
+//  TODO move these into _structure
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    /* ... */
+  }
+}
+
+@media (prefers-reduced-motion) {
+  /* ... */
+}

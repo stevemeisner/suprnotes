@@ -1,0 +1,9 @@
+.logoLink {
+  display: block;
+  height: var(--header-height);
+
+  svg {
+    transform: scale(0.3);
+    transform-origin: left top;
+  }
+}

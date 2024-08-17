@@ -1,0 +1,53 @@
+@import '@styles/variables.module.scss';
+
+:root {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --white-color: #{$white-color};
+  --dark-grey-color: #{$dark-grey-color};
+  --purple-color: #{$purple-color};
+  --brown-color: #{$brown-color};
+  --max-width: #{$max-width};
+  --header-height: #{$header-height};
+  --font-mono: #{$font-mono};
+  --breakpoint-mobile: #{$breakpoint-mobile};
+  --breakpoint-tablet: #{$breakpoint-tablet};
+  --breakpoint-large: #{$breakpoint-large};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* override the light theme colors */
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-size: 16px;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: underline;
+
+  &:hover {
+    color: var(--secondary-color);
+  }
+}
+
+code {
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+// }

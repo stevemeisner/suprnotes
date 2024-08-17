@@ -1,0 +1,43 @@
+@import '@styles/variables.module.scss';
+
+@mixin autoMargin {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin outer-container {
+  @include autoMargin;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: var(--max-width);
+}
+
+@mixin min-width($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin max-width($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @include max-width(#{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tabletUp {
+  @media (min-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin largeUp {
+  @media (min-width: #{$breakpoint-large}) {
+    @content;
+  }
+}

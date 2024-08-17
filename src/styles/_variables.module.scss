@@ -1,0 +1,37 @@
+$max-width: 68.75rem;
+$header-height: 2.4375rem;
+
+// fonts
+$font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+  'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+  'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+// colors
+$primary-color: #64ff00;
+$secondary-color: #67c92d;
+$dark-grey-color: #222;
+$white-color: #fff;
+$purple-color: #981cfc;
+$brown-color: #593f24;
+
+// breakpoints
+$breakpoint-mobile: 700px;
+$breakpoint-tablet: 1024px;
+$breakpoint-large: 1440px;
+
+// export the variables for global use
+/* https://nextjs.org/docs/app/building-your-application/styling/sass#sass-variables */
+:export {
+  primaryColor: $primary-color;
+  secondaryColor: $secondary-color;
+  whiteColor: $white-color;
+  darkGreyColor: $dark-grey-color;
+  purpleColor: $purple-color;
+  brownColor: $brown-color;
+  maxWidth: $max-width;
+  headerHeight: $header-height;
+  fontMono: $font-mono;
+  breakpointMobile: $breakpoint-mobile;
+  breakpointTablet: $breakpoint-tablet;
+  breakpointLarge: $breakpoint-large;
+}
