@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import { getUser } from '@/actions/user'
+import LinkButton from '@components/LinkButton/LinkButton'
 import SignOutButton from '@components/SignOutButton/SignOutButton'
 import { ROUTES } from '@utils/appRoutes'
 import styles from './Navigation.module.scss'
@@ -16,7 +16,7 @@ export default async function Navigation() {
           </li>
         ) : (
           <li>
-            <Link href={ROUTES.LOGIN}>Login</Link>
+            <LinkButton href={ROUTES.LOGIN}>Login</LinkButton>
           </li>
         )}
       </ul>

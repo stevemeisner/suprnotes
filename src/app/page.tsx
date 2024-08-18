@@ -1,7 +1,11 @@
 import LinkButton from '@components/LinkButton/LinkButton'
 import styles from '@styles/page.module.scss'
+import { ROUTES } from '@utils/appRoutes'
+import { getUser } from './actions/user'
 
-export default function Home() {
+export default async function Home() {
+  const user = await getUser().catch(() => null)
+
   return (
     <main className={styles.main}>
       <div className={styles.intro}>
@@ -10,9 +14,15 @@ export default function Home() {
           An anonymous note-taking and sharing app
         </p>
 
-        <p>
-          <LinkButton href="/login">Log In</LinkButton>
-        </p>
+        {user ? (
+          <p>
+            <LinkButton href={ROUTES.NOTES}>Notes</LinkButton>
+          </p>
+        ) : (
+          <p>
+            <LinkButton href={ROUTES.LOGIN}>Log In</LinkButton>
+          </p>
+        )}
       </div>
     </main>
   )

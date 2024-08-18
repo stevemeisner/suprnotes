@@ -6,6 +6,8 @@ import { createClient } from './supabase/server'
 
 export const signOut = async () => {
   const supabase = createClient()
+
   await supabase.auth.signOut()
+
   return redirect(ROUTES.HOME)
 }
