@@ -10,13 +10,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "supabase-types": "bash ./scripts/updateSupabaseTypes.sh"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
+    "@supabase/ssr": "^0.4.0",
+    "@supabase/supabase-js": "^2.45.1",
+    "classnames": "^2.5.1",
     "eslint-plugin-import": "^2.29.1",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-hook-form": "^7.52.2",
+    "supabase": "^1.190.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20",

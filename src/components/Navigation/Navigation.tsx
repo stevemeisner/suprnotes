@@ -1,27 +1,22 @@
-'use client'
-
 import Link from 'next/link'
-import { useState } from 'react'
+import { getUser } from '@/actions/user'
+import SignOutButton from '@components/SignOutButton/SignOutButton'
+import { ROUTES } from '@utils/appRoutes'
 import styles from './Navigation.module.scss'
 
-export default function Navigation() {
-  const [user, setUser] = useState(null)
+export default async function Navigation() {
+  const user = await getUser().catch(() => null)
 
   return (
     <nav className={styles.primary}>
       <ul>
         {user ? (
-          <>
-            <li>
-              <Link href="/notes">My Notes</Link>
-            </li>
-            <li>
-              <Link href="/notes/new">New Note</Link>
-            </li>
-          </>
+          <li>
+            <SignOutButton />
+          </li>
         ) : (
           <li>
-            <Link href="/login">Login</Link>
+            <Link href={ROUTES.LOGIN}>Login</Link>
           </li>
         )}
       </ul>
