@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Supabase Next.js Starter
+
+This exploratory project uses Supabase and Next.js to create a simple CRUD app. It features database migration, authentication, and dynamic user roles managed by an admin. Access to content and functionality varies based on user roles.
 
 ## Getting Started
 
-First, run the development server:
+Kick off a local instance of Supabase, and then fire up the dev server.
+
+1. Make sure you're signed into Supabase in your browser with an account that has access to the project you're working with.
+2. Ensure that [Docker Desktop](https://www.docker.com/products/docker-desktop/) is running on your machine
+   - [Supabase docs](https://supabase.com/docs/guides/cli/local-development#start-supabase-services)
+3. create a `.env.local` file in the root of the project with the following content:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321
+NEXT_PUBLIC_SUPABASE_ANON_KEY=public_anon_key
+SUPABASE_PROJECT_ID='default'
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> 📝 You can find the public anon key in the Supabase settings page of your project (see screenshot below).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Run the following commands in your terminal:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+# [first run]  install the dependencies
+pnpm install
 
-## Learn More
+# [first run] sign in to supabase
+pnpm supabase login
 
-To learn more about Next.js, take a look at the following resources:
+# [first run] link the project you're working on
+pnpm supabase link
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# start the local supabase instance
+pnpm supabase start
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# start the dev server
+pnpm dev
+```
 
-## Deploy on Vercel
+## Database Development & Migration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+We can develop our database schema locally and then generate migrations from the changes we've made. This is useful for keeping track of changes to the database schema over time, and for sharing those changes with other developers.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+📝 DB migrations will be run in the production environment when there is a push into the `main` branch (like when a PR is merged or when commits are pushed directly to `main`)
+
+### New Blank Migration
+
+To create a blank new migration, run the following command:
+
+```bash
+pnpm supabase migration new <migration__name>
+```
+
+You can then write SQL in the newly created migration file in the `migrations` directory.
+
+### New Generated Migration from GUI Changes
+
+You can alter your database locally in the Studio UI, and then generate a migration from the changes you've made. To do this, run the following command:
+
+```bash
+pnpn supabase db diff --use-migra -f <migration__name>
+```
+
+> 📹 https://www.youtube.com/watch?v=Kx5nHBmIxyQ
+>
+> 📝 https://supabase.com/docs/guides/cli/local-development#database-migrations
+
+---
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
