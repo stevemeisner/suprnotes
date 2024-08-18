@@ -1,7 +1,7 @@
+import { getUser } from '@actions/user'
 import LinkButton from '@components/LinkButton/LinkButton'
 import styles from '@styles/page.module.scss'
 import { ROUTES } from '@utils/appRoutes'
-import { getUser } from './actions/user'
 
 export default async function Home() {
   const user = await getUser().catch(() => null)

@@ -11,7 +11,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "supabase-types": "bash ./scripts/updateSupabaseTypes.sh"
+    "supabase-types": "bash ./scripts/updateSupabaseTypes.sh",
+    "supabase-types:local": "bash ./scripts/updateLocalSupabaseTypes.sh"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
