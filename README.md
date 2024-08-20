@@ -18,6 +18,8 @@ SUPABASE_PROJECT_ID='default'
 ```
 
 > 📝 You can find the public anon key in the Supabase settings page of your project (see screenshot below).
+> 
+> <img width="1445" alt="Screenshot 2024-08-19 at 8 51 39 PM" src="https://github.com/user-attachments/assets/ea7c4b07-9ae7-4322-89d1-cc826af2cec5">
 
 4. Run the following commands in your terminal:
 
