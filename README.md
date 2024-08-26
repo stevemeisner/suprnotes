@@ -1,6 +1,6 @@
 # Supabase Next.js Starter
 
-This exploratory project uses Supabase and Next.js to create a simple CRUD app. It features database migration, authentication, and dynamic user roles managed by an admin. Access to content and functionality varies based on user roles.
+This exploratory project uses Supabase and Next.js to create a simple app. It features (or _will_ feature ...) database migration, authentication, and dynamic user roles managed by an admin. Access to content and functionality varies based on user roles.
 
 ## Getting Started
 
